@@ -1,0 +1,26 @@
+function exec(initialPayload) {
+
+    payload = JSON.parse(initialPayload);
+
+    payload = concat({
+        "number" : 123
+    }, payload);
+
+    payload = concat({
+        "string": "string"
+    }, payload);
+
+    p = JSON.stringify(payload);
+
+    print(p);
+
+    return p;
+
+}
+
+function concat(source, target) {
+    for (var key in source) {
+        target[key] = source[key];
+    }
+    return target;
+}
